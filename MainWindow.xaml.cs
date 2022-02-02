@@ -24,5 +24,18 @@ namespace Jose_Gonzalez_Ap1_p1
         {
             InitializeComponent();
         }
+
+        public void RegistroMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            //var rLibros = new rLibros();
+            //rLibros.Show();
+        }
+
+        public void ConsultaMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            //var cLibros = new cLibros();
+            //cLibros.Show();
+            
+        }
     }
 }

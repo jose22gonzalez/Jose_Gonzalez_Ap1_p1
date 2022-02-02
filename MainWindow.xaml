@@ -5,8 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Jose_Gonzalez_Ap1_p1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="300" Width="300">
     <Grid>
+         <StackPanel> 
+            <Menu> 
+                <MenuItem Header="Registros" >
+                    <MenuItem Header="registro" x:Name="rRegistro" Click ="RegistroMenuItem_Click" /> 
+                </MenuItem>
 
+                <MenuItem Header="Consultas" >
+                    <MenuItem Header="consulta" x:Name="rConsulta" Click ="ConsultaMenuItem_Click"/>
+                </MenuItem>
+            </Menu>
+
+        </StackPanel>
     </Grid>
 </Window>
