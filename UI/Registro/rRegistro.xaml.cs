@@ -1,7 +1,5 @@
 using System.Windows;
 
-
-
 namespace Jose_Gonzalez_Ap1_p1.UI.Registro
 {
     public partial class rRegistro : Window
