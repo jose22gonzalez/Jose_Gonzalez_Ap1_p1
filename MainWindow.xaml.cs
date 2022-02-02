@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Jose_Gonzalez_Ap1_p1.UI.Registro;
 
 namespace Jose_Gonzalez_Ap1_p1
 {
@@ -27,8 +28,8 @@ namespace Jose_Gonzalez_Ap1_p1
 
         public void RegistroMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            //var rLibros = new rLibros();
-            //rLibros.Show();
+            var rRegistro = new rRegistro();
+            rRegistro.Show();
         }
 
         public void ConsultaMenuItem_Click(object sender, RoutedEventArgs e)
