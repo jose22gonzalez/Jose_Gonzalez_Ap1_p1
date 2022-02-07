@@ -1,7 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using Jose_Gonzalez_Ap1_p1.Entidades;
 
-public class Contexto:DbContext
+namespace Jose_Gonzalez_Ap1_p1.DAL
+{
+    public class Contexto:DbContext
 {
     public DbSet<Productos> Productos { get; set; }
     
@@ -10,3 +12,5 @@ public class Contexto:DbContext
         optionsBuilder.UseSqlite(@"Data Source=Data\Productos.db");
     }
 }
+}
+
