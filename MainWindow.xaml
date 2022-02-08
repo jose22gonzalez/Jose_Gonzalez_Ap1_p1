@@ -10,7 +10,7 @@
          <StackPanel> 
             <Menu> 
                 <MenuItem Header="Registros" >
-                    <MenuItem Header="registro" x:Name="rRegistro" Click ="RegistroMenuItem_Click" /> 
+                    <MenuItem Header="Productos" x:Name="rProductos" Click ="RegistroMenuItem_Click" /> 
                 </MenuItem>
 
                 <MenuItem Header="Consultas" >

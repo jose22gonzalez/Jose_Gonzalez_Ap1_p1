@@ -5,19 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Jose_Gonzalez_Ap1_p1.UI.Registro"
         mc:Ignorable="d"
-        Title="Registros" Height="300" Width="300">
+        Title="Registros Productos" Height="400" Width="300">
     <Grid>
          <StackPanel Orientation="Vertical" Margin="10"> 
            
-           <!-- LibroId -->
+           
             <StackPanel Orientation="Vertical">
-                <Label Content="Id:"/>
+                <Label Content="Productoid:"/>
 
                 <StackPanel Orientation="Horizontal">
-                    <TextBox Text="{Binding LibroId}" Width="100" />
+                    <TextBox x:Name="ProductoIDTextBox" Width="100" />
                     <Button Content="🔎 Buscar" Click="BuscarButton_Click" /> 
                 </StackPanel>
             </StackPanel>
+
+            <Label Content="Descripcion:"/>
+            <TextBox x:Name="DescripcionTextBox" Width="200"/>
+
+            <Label Content="Existencia:"/>
+            <TextBox x:Name="ExistenciaTextBox" Width="200"/>
+
+            <Label Content="Costo:"/>
+            <TextBox x:Name="CostoTextBox" Width="200"/>
+
+            <Label Content="Valornventario:"/>
+            <TextBox x:Name="ValorinventarioTextBox" Width="200"/>
 
             <StackPanel 
                         Margin="0,20,0,0"                      

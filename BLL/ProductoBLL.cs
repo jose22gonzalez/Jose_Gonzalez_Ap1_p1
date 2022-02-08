@@ -20,6 +20,7 @@ namespace Jose_Gonzalez_Ap1_p1.BLL
             try
             {
                 encontrado = context.Productos.Any(l => l.Productoid == productoID);
+                
             }
             catch (Exception)
             {
@@ -52,6 +53,15 @@ namespace Jose_Gonzalez_Ap1_p1.BLL
                 contexto.Dispose();
             }
             return paso;
+        }
+
+        public static bool Guardar(Productos productos)
+        {
+           
+            if(!Existe(productos.Productoid))
+                return Insertar(productos);
+            else
+                return Modificar(productos);
         }
 
         public static bool Modificar(Productos productos)
