@@ -29,14 +29,14 @@ namespace Jose_Gonzalez_Ap1_p1
 
         public void RegistroMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            var rRegistro = new rRegistro();
-            rRegistro.Show();
+            var rProducto = new rProducto();
+            rProducto.Show();
         }
 
         public void ConsultaMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            var cConsulta = new cConsulta();
-            cConsulta.Show();
+            var cProducto = new cProducto();
+            cProducto.Show();
             
         }
     }

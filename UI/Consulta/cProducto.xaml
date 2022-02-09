@@ -1,13 +1,13 @@
-<Window x:Class="Jose_Gonzalez_Ap1_p1.UI.Consulta.cConsulta"
+<Window x:Class="Jose_Gonzalez_Ap1_p1.UI.Consulta.cProducto"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Jose_Gonzalez_Ap1_p1.UI.Consulta"
         mc:Ignorable="d"
-        Title="Consultas" Height="400" Width="400">
+        Title="Consulta Producto" Height="400" Width="400">
     <Grid>
-        <StackPanel Orientation="Vertical" Margin="10">
+         <StackPanel Orientation="Vertical" Margin="10">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                 <Label Content="Filtro:"/>
                 <ComboBox x:Name="FiltroComboBox" Width="100">
@@ -21,9 +21,6 @@
                 <Button Content="🔎 Buscar" Click="BuscarButton_Click" />
             </StackPanel>
             <DataGrid x:Name="ProductoDataGrid"  Height="250" Width="380">
-
-            
-              
             </DataGrid>
         </StackPanel>
     </Grid>

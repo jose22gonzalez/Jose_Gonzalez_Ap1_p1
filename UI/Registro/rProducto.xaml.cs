@@ -1,20 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 using Jose_Gonzalez_Ap1_p1.Entidades;
 using Jose_Gonzalez_Ap1_p1.BLL;
 
-
 namespace Jose_Gonzalez_Ap1_p1.UI.Registro
 {
-    public partial class rRegistro : Window
+    /// <summary>
+    /// Interaction logic for rProducto.xaml
+    /// </summary>
+    public partial class rProducto : Window
     {
         private Productos productos = new Productos();
-        public rRegistro()
+        public rProducto()
         {
             InitializeComponent();
             this.DataContext = productos;
-
         }
-
 
         private void Cargar()
         {
@@ -87,17 +100,6 @@ namespace Jose_Gonzalez_Ap1_p1.UI.Registro
                 MessageBox.Show("No se puede guardar el Producto", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
             }
 
-
-/*
-            if (paso)
-            {
-                MessageBox.Show("Producto guardado con eso exito", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            else
-            {
-                MessageBox.Show("No se puede guardar el Producto", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
-            }*/
-
         }
 
         public void EliminarButton_Click(object sender, RoutedEventArgs e)
@@ -112,9 +114,7 @@ namespace Jose_Gonzalez_Ap1_p1.UI.Registro
                 MessageBox.Show("No se puede Eliminar el Producto", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-
-
-
-
     }
+
+
 }
