@@ -39,10 +39,10 @@ namespace Jose_Gonzalez_Ap1_p1.UI.Consulta
                 switch(FiltroComboBox.SelectedIndex)
                 {
                     case 0:
-                        listado = ProductoBLL.GetList(l => l.Productoid.ToString().Contains(CriterioTextBox.Text));
+                        listado = ProductoBLL.GetList(l => l.Productoid.ToString() == (CriterioTextBox.Text));
                         break;
                     case 1:
-                        listado = ProductoBLL.GetList(l => l.Descripcion.Contains(CriterioTextBox.Text));
+                        listado = ProductoBLL.GetList(l => l.Descripcion == (CriterioTextBox.Text));
                         break;
                 }
             }

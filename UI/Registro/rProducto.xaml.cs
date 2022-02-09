@@ -89,7 +89,7 @@ namespace Jose_Gonzalez_Ap1_p1.UI.Registro
             {
                 return;
             }
-            if (!ProductoBLL.Existe(productos.Productoid) && !ProductoBLL.Existe(int.Parse(productos.Descripcion)))
+            if (!ProductoBLL.Existe(productos.Productoid))
             {
                 productos.ValorInventario = productos.Costo * productos.Existencia;
                 paso = ProductoBLL.Guardar(productos);
