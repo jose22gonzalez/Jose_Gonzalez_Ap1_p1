@@ -7,34 +7,24 @@
         mc:Ignorable="d"
         Title="Consultas" Height="400" Width="400">
     <Grid>
-        <StackPanel Orientation="Vertical" Margin="10"> 
-            
+        <StackPanel Orientation="Vertical" Margin="10">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-
-                <!-- COMBOBOX -->
                 <Label Content="Filtro:"/>
                 <ComboBox x:Name="FiltroComboBox" Width="100">
-                    <ComboBox.Items> 
-                        <ComboBoxItem Content="Titulo" />
-                        <ComboBoxItem Content="Grupo" />
+                    <ComboBox.Items>
+                        <ComboBoxItem Content="Productoid" />
+                        <ComboBoxItem Content="Descripcion" />
                     </ComboBox.Items>
                 </ComboBox>
-
-
-                <!-- CRITERIO -->
                 <Label Content="Criterio:"/>
                 <TextBox x:Name="CriterioTextBox"   Width="100" />
-
-                <!-- BUSCAR -->
                 <Button Content="🔎 Buscar" Click="BuscarButton_Click" />
-
             </StackPanel>
+            <DataGrid x:Name="ProductoDataGrid"  Height="250" Width="380">
 
-            <!-- GRID -->
-            <DataGrid x:Name="LibrosDataGrid"  Height="250" Width="380"> 
+            
               
             </DataGrid>
-
         </StackPanel>
     </Grid>
 </Window>

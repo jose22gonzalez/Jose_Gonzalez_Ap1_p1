@@ -4,7 +4,7 @@
 
 namespace Jose_Gonzalez_Ap1_p1.Migrations
 {
-    public partial class InicialMigracion : Migration
+    public partial class Inicial_AP1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,8 +14,8 @@ namespace Jose_Gonzalez_Ap1_p1.Migrations
                 {
                     Productoid = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Descripcion = table.Column<string>(type: "TEXT", nullable: true),
-                    Existencia = table.Column<string>(type: "TEXT", nullable: true),
+                    Descripcion = table.Column<string>(type: "TEXT", nullable: false),
+                    Existencia = table.Column<int>(type: "INTEGER", nullable: false),
                     Costo = table.Column<int>(type: "INTEGER", nullable: false),
                     ValorInventario = table.Column<int>(type: "INTEGER", nullable: false)
                 },

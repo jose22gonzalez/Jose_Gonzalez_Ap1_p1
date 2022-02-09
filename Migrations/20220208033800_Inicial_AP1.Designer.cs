@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Jose_Gonzalez_Ap1_p1.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20220207233248_InicialMigracion")]
-    partial class InicialMigracion
+    [Migration("20220208033800_Inicial_AP1")]
+    partial class Inicial_AP1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,10 +28,11 @@ namespace Jose_Gonzalez_Ap1_p1.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Descripcion")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Existencia")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Existencia")
+                        .HasColumnType("INTEGER");
 
                     b.Property<int>("ValorInventario")
                         .HasColumnType("INTEGER");

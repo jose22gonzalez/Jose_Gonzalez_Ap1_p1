@@ -7,45 +7,42 @@ namespace Jose_Gonzalez_Ap1_p1.UI.Registro
 {
     public partial class rRegistro : Window
     {
-        private Productos Productos = new Productos();
+        private Productos productos = new Productos();
         public rRegistro()
         {
             InitializeComponent();
+            this.DataContext = productos;
 
         }
 
-        public void CalcularUnitario()
-        {
-            
-        }
+
         private void Cargar()
         {
             this.DataContext = null;
-            this.DataContext = this.Productos;
+            this.DataContext = this.productos;
         }
 
         private void Limpiar()
         {
-            this.Productos = new Productos();
-            this.DataContext = Productos;
+            this.productos = new Productos();
+            this.DataContext = productos;
         }
 
-        private bool Validad()
+        private bool Validar()
         {
             bool esValido = true;
 
-            if (string.IsNullOrWhiteSpace(Productos.Descripcion))
+            if (string.IsNullOrWhiteSpace(productos.Descripcion))
             {
                 esValido = false;
                 DescripcionTextBox.Focus();
-                MessageBox.Show("Debe escribir la Descripcion!", "Validacion", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Debe indicar la Descripcion!", "Validación", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            else if (string.IsNullOrWhiteSpace(Productos.Costo.ToString()))
+            else if (string.IsNullOrWhiteSpace(productos.Productoid.ToString()))
             {
                 esValido = false;
-                CostoTextBox.Focus();
-                MessageBox.Show("Debe escribir la Costo!", "Validacion", MessageBoxButton.OK, MessageBoxImage.Error);
-
+                ProductoidTextbox.Focus();
+                MessageBox.Show("Debe indicar el ProductoID!", "Validación", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
             return esValido;
@@ -53,10 +50,10 @@ namespace Jose_Gonzalez_Ap1_p1.UI.Registro
 
         public void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
-            var encontrado = ProductoBLL.Buscar(this.Productos.Productoid);
+            var encontrado = ProductoBLL.Buscar(this.productos.Productoid);
             if (encontrado != null)
             {
-                this.Productos = encontrado;
+                this.productos = encontrado;
                 Cargar();
             }
             else
@@ -74,27 +71,38 @@ namespace Jose_Gonzalez_Ap1_p1.UI.Registro
         public void GuardarButton_Click(object sender, RoutedEventArgs e)
         {
             bool paso = false;
-            if (!Validad())
+
+            if (!Validar())
             {
                 return;
             }
+            if (!ProductoBLL.Existe(productos.Productoid))
+            {
+                productos.ValorInventario = productos.Costo * productos.Existencia;
+               
+                
+                paso = ProductoBLL.Guardar(productos);
+                 MessageBox.Show("Producto guardado con eso exito", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+            }else{
+                MessageBox.Show("No se puede guardar el Producto", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
 
-            paso = ProductoBLL.Guardar(Productos);
 
+/*
             if (paso)
             {
                 MessageBox.Show("Producto guardado con eso exito", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
             {
-                MessageBox.Show("Producto guardado con eso exito", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
+                MessageBox.Show("No se puede guardar el Producto", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+            }*/
 
         }
 
         public void EliminarButton_Click(object sender, RoutedEventArgs e)
         {
-            if (ProductoBLL.Eliminar(Productos.Productoid))
+            if (ProductoBLL.Eliminar(productos.Productoid))
             {
                 Limpiar();
                 MessageBox.Show("Producto Eliminado", "Con exito!", MessageBoxButton.OK, MessageBoxImage.Information);
