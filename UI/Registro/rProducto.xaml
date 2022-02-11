@@ -3,9 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       
         xmlns:local="clr-namespace:Jose_Gonzalez_Ap1_p1.UI.Registro"
         mc:Ignorable="d"
-        Title="Registros Productos" Height="400" Width="300">
+        Title="Registros Productos" Height="400" Width="400">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10"> 
            
